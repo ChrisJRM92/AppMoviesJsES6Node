@@ -3,6 +3,13 @@ import database from './config/database.js';
 import app from './server.js';
 dotenv.config();
 
+// Added this lines for create tables in ours database in postgreSQL
+import Genre from './data/models/genre.model.js';
+import Actors from './data/models/actors.model.js';
+import Directors from './data/models/directors.model.js';
+import Movies from './data/models/movies.model.js';
+
+
 const port = process.env.PORT;
 const server = `http://localhost:${port}`;
 
