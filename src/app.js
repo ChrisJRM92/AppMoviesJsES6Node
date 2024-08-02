@@ -9,6 +9,9 @@ import Actors from './data/models/actors.model.js';
 import Directors from './data/models/directors.model.js';
 import Movies from './data/models/movies.model.js';
 
+// Added this lines for relationship between tables
+import '../src/data/models/index.js'
+
 
 const port = process.env.PORT;
 const server = `http://localhost:${port}`;
@@ -16,7 +19,7 @@ const server = `http://localhost:${port}`;
 
 (async function() {
   try{
-    await database.sync();
+    await database.sync(); //{alter: true} {force: true}
     console.log('Database connected...');
     app.listen(port, ()=>{
       console.log(`Server on ${server}`)
