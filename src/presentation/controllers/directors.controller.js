@@ -1,13 +1,13 @@
-import Movies from "../../data/models/movies.model.js";
+import Directors from "../../data/models/directors.model.js";
 import catchError from "../../utils/catchError.js";
 
 const getAll = catchError(async(req, res)=>{
-  const data = await Movies.findAll();
+  const data = await Directors.findAll();
   return res.json(data);
 });;
 
 const create = catchError(async(req, res)=>{
-  const data = await Movies.create(req.body);
+  const data = await Directors.create(req.body);
   return res.json(data);
 });
 
