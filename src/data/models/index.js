@@ -5,4 +5,4 @@ import Movies from "./movies.model.js";
 
 Movies.hasMany(Actors);
 Movies.hasMany(Directors);
-Movies.belongsTo(Genre);
+Movies.hasMany(Genre);
