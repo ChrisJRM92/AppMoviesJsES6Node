@@ -1,9 +1,10 @@
 import express from 'express';
-import { getAll, create } from '../controllers/genres.controller.js';
+import { getAll, create, remove, update, getOne } from '../controllers/genres.controller.js';
 
 const routerGenre = express.Router();
 
 routerGenre.route('/').get(getAll).post(create);
+routerGenre.route('/:id').get(getOne).delete(remove).patch(update)
   
 
 export default routerGenre;

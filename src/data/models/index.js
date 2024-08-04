@@ -3,6 +3,3 @@ import Directors from "./directors.model.js";
 import Genre from "./genre.model.js";
 import Movies from "./movies.model.js";
 
-Movies.hasMany(Actors);
-Movies.hasMany(Directors);
-Movies.hasMany(Genre);

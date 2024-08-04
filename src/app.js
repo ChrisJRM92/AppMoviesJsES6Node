@@ -19,7 +19,7 @@ const server = `http://localhost:${port}`;
 
 (async function() {
   try{
-    await database.sync(); //{alter: true} {force: true}
+    await database.sync({alter: true}); //{alter: true} {force: true}
     console.log('Database connected...');
     app.listen(port, ()=>{
       console.log(`Server on ${server}`)

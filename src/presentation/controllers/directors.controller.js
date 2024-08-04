@@ -11,7 +11,35 @@ const create = catchError(async(req, res)=>{
   return res.json(data);
 });
 
+const getOne = catchError(async(req, res) => {
+  const { id } = req.params;
+  const data = await Directors.findByPk(id);
+  if(!data) return res.sendStatus(404);
+  return res.json(data);
+});
+
+const update = catchError(async(req, res) => {
+  const { id } = req.params;
+  const data = await Directors.update(
+      req.body,
+      { where: {id}, returning: true }
+  );
+  if(data[0] === 0) return res.sendStatus(404);
+  return res.json(data[1][0]);
+});
+
+const remove = catchError(async(req, res)=>{
+  const {id} = req.params;
+  const data = await Directors.destroy({where: {id: id}})
+  if (!data) {
+    return res.status(404);
+  }else{res.sendStatus(204)};
+});
+
 export{
   getAll,
-  create
+  create,
+  getOne,
+  update,
+  remove
 } 
