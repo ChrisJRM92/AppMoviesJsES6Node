@@ -4,7 +4,7 @@ import { getAll, create, getOne, remove, update } from '../controllers/directors
 const routerDirectors = express.Router();
 
 routerDirectors.route('/').get(getAll).post(create);
-routerDirectors.route('/:id').get(getOne).delete(remove).patch(update)
+routerDirectors.route('/:id').get(getOne).delete(remove).put(update)
   
 
 export default routerDirectors;

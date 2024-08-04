@@ -4,11 +4,11 @@ import catchError from "../../utils/catchError.js";
 const getAll = catchError(async(req, res)=>{
   const data = await Actors.findAll();
   return res.json(data);
-});;
+});
 
 const create = catchError(async(req, res)=>{
   const data = await Actors.create(req.body);
-  return res.json(data);
+  return res.status(200).json(data)
 });
 
 const getOne = catchError(async(req, res) => {
